@@ -16,10 +16,21 @@ from app.services.scorer import score_events_batch
 
 
 async def seed_curated_events() -> None:
-    """On startup, seed curated events that haven't been scored yet."""
+    """On startup, remove stale curated events and seed any new ones."""
     db = SessionLocal()
     try:
         from app.database import EventModel
+        current_ids = {e["id"] for e in CURATED_EVENTS}
+        stale = (
+            db.query(EventModel)
+            .filter(EventModel.id.like("curated_%"))
+            .filter(EventModel.id.notin_(current_ids))
+            .all()
+        )
+        for row in stale:
+            db.delete(row)
+        db.commit()
+
         existing_ids = {row.id for row in db.query(EventModel.id).all()}
         new_events = [e for e in CURATED_EVENTS if e["id"] not in existing_ids]
         if new_events:

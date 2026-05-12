@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  /* Crowe Primary */
+  --color-crowe-navy: #011E41;
+  --color-crowe-amber: #F5A800;
+  --color-crowe-amber-bright: #FFD231;
+  --color-crowe-amber-dark: #D7761D;
+  --color-crowe-indigo: #011E41;
+  --color-crowe-indigo-core: #002E62;
+  --color-crowe-indigo-bright: #003F9F;
+
+  /* Crowe Secondary */
+  --color-crowe-teal: #05AB8C;
+  --color-crowe-teal-bright: #16D9BC;
+  --color-crowe-teal-dark: #0C7876;
+  --color-crowe-cyan: #54C0E8;
+  --color-crowe-cyan-light: #8FE1FF;
+  --color-crowe-cyan-dark: #007DA3;
+  --color-crowe-blue: #0075C9;
+  --color-crowe-blue-light: #32A8FD;
+  --color-crowe-blue-dark: #0050AD;
+  --color-crowe-violet: #B14FC5;
+  --color-crowe-violet-bright: #EA80FF;
+  --color-crowe-violet-dark: #612080;
+  --color-crowe-coral: #E5376B;
+  --color-crowe-coral-bright: #FF526F;
+  --color-crowe-coral-dark: #992A5C;
+
+  /* Neutrals */
+  --color-crowe-text: #333333;
+  --color-crowe-text-mid: #4F4F4F;
+  --color-crowe-text-muted: #828282;
+  --color-crowe-border: #BDBDBD;
+  --color-crowe-surface: #E0E0E0;
+
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --background: #f8f9fb;
+  --foreground: #333333;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Helvetica Now', Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Line-clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import Link from "next/link";
 import * as XLSX from "xlsx";
 import { api, APIEvent, CATEGORY_LABELS, STATUS_LABELS, STATUS_COLORS, scoreColor, formatDateRange } from "@/lib/api";
 
@@ -95,7 +96,7 @@ function EventRow({ event, onStatusChange }: { event: APIEvent; onStatusChange: 
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <h3 className="font-semibold text-nexus-indigo text-sm leading-snug line-clamp-2">{event.name}</h3>
+            <Link href={`/events/${event.id}`} className="font-semibold text-nexus-indigo text-sm leading-snug line-clamp-2 hover:underline">{event.name}</Link>
             <p className="text-nexus-text-muted text-xs mt-0.5">
               {formatDateRange(event.date_start, event.date_end)}
               {event.city && ` · ${event.city}${event.state ? `, ${event.state}` : ""}`}

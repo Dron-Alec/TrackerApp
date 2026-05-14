@@ -58,12 +58,12 @@ function StatusBadge({ status }: { status: EngagementStatus }) {
 
 function SideBadge({ side }: { side: ContactSide }) {
   return side === "Firm"
-    ? <span className="inline-flex px-2 py-0.5 rounded text-xs font-semibold bg-[#011E41]/10 text-[#011E41] border border-[#011E41]/20">Firm</span>
+    ? <span className="inline-flex px-2 py-0.5 rounded text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">Firm</span>
     : <span className="inline-flex px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">Client</span>;
 }
 
 function Avatar({ name, size = "sm" }: { name: string; size?: "sm" | "md" }) {
-  const colors = ["bg-[#011E41]", "bg-[#0075C9]", "bg-[#05AB8C]", "bg-[#F5A800]", "bg-[#B14FC5]", "bg-[#E5376B]"];
+  const colors = ["bg-indigo-600", "bg-blue-500", "bg-emerald-500", "bg-violet-500", "bg-rose-500", "bg-sky-500"];
   const idx = name.charCodeAt(0) % colors.length;
   const sz = size === "md" ? "w-9 h-9 text-sm" : "w-7 h-7 text-xs";
   return (

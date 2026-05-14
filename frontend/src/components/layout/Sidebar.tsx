@@ -72,10 +72,6 @@ export function Sidebar() {
       <div className="px-6 py-5 border-b border-white/10">
         <div className="flex items-center gap-2">
           <span className="text-nexus-amber font-bold text-xl tracking-tight leading-none">
-            NEXUS
-          </span>
-          <span className="w-px h-5 bg-white/20" />
-          <span className="text-white/70 text-xs font-medium tracking-wider uppercase">
             Radar
           </span>
         </div>

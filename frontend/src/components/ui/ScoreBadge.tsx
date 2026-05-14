@@ -34,7 +34,7 @@ export function ScoreBadge({ score, size = 'md' }: ScoreBadgeProps) {
 }
 
 export function ScoreBar({ score }: { score: number }) {
-  const color = score >= 75 ? '#05AB8C' : score >= 50 ? '#F5A800' : score >= 25 ? '#0075C9' : '#828282';
+  const color = score >= 75 ? '#10b981' : score >= 50 ? '#6366f1' : score >= 25 ? '#3b82f6' : '#94a3b8';
   return (
     <div className="flex items-center gap-3">
       <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">

@@ -2,50 +2,50 @@
 
 @theme {
   /* Primary */
-  --color-nexus-navy: #011E41;
-  --color-nexus-amber: #F5A800;
-  --color-nexus-amber-bright: #FFD231;
-  --color-nexus-amber-dark: #D7761D;
-  --color-nexus-indigo: #011E41;
-  --color-nexus-indigo-core: #002E62;
-  --color-nexus-indigo-bright: #003F9F;
+  --color-nexus-navy: #0f172a;
+  --color-nexus-amber: #6366f1;
+  --color-nexus-amber-bright: #818cf8;
+  --color-nexus-amber-dark: #4338ca;
+  --color-nexus-indigo: #0f172a;
+  --color-nexus-indigo-core: #1e293b;
+  --color-nexus-indigo-bright: #334155;
 
   /* Secondary */
-  --color-nexus-teal: #05AB8C;
-  --color-nexus-teal-bright: #16D9BC;
-  --color-nexus-teal-dark: #0C7876;
-  --color-nexus-cyan: #54C0E8;
-  --color-nexus-cyan-light: #8FE1FF;
-  --color-nexus-cyan-dark: #007DA3;
-  --color-nexus-blue: #0075C9;
-  --color-nexus-blue-light: #32A8FD;
-  --color-nexus-blue-dark: #0050AD;
-  --color-nexus-violet: #B14FC5;
-  --color-nexus-violet-bright: #EA80FF;
-  --color-nexus-violet-dark: #612080;
-  --color-nexus-coral: #E5376B;
-  --color-nexus-coral-bright: #FF526F;
-  --color-nexus-coral-dark: #992A5C;
+  --color-nexus-teal: #10b981;
+  --color-nexus-teal-bright: #34d399;
+  --color-nexus-teal-dark: #059669;
+  --color-nexus-cyan: #38bdf8;
+  --color-nexus-cyan-light: #7dd3fc;
+  --color-nexus-cyan-dark: #0284c7;
+  --color-nexus-blue: #3b82f6;
+  --color-nexus-blue-light: #60a5fa;
+  --color-nexus-blue-dark: #2563eb;
+  --color-nexus-violet: #a855f7;
+  --color-nexus-violet-bright: #c084fc;
+  --color-nexus-violet-dark: #7c3aed;
+  --color-nexus-coral: #f43f5e;
+  --color-nexus-coral-bright: #fb7185;
+  --color-nexus-coral-dark: #e11d48;
 
   /* Neutrals */
-  --color-nexus-text: #333333;
-  --color-nexus-text-mid: #4F4F4F;
-  --color-nexus-text-muted: #828282;
-  --color-nexus-border: #BDBDBD;
-  --color-nexus-surface: #E0E0E0;
+  --color-nexus-text: #1e293b;
+  --color-nexus-text-mid: #475569;
+  --color-nexus-text-muted: #94a3b8;
+  --color-nexus-border: #e2e8f0;
+  --color-nexus-surface: #f1f5f9;
 
   --font-sans: Arial, Helvetica, sans-serif;
 }
 
 :root {
-  --background: #f8f9fb;
-  --foreground: #333333;
+  --background: #f8fafc;
+  --foreground: #1e293b;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Helvetica Now', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

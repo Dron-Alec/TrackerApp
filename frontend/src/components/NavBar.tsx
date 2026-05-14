@@ -37,14 +37,14 @@ export function NavBar({ lastIngested }: NavBarProps) {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">
             <span
-              className="text-2xl font-bold tracking-tight text-white"
-              style={{ fontFamily: "'Helvetica Now', Arial, sans-serif", letterSpacing: '-0.02em' }}
+              className="text-2xl font-bold tracking-tight text-nexus-amber"
+              style={{ fontFamily: "'Inter', Arial, sans-serif", letterSpacing: '-0.02em' }}
             >
-              NEXUS
+              Radar
             </span>
             <div className="hidden sm:block w-px h-6 bg-white/20" />
             <div className="hidden sm:block">
-              <p className="text-nexus-amber text-sm font-semibold leading-none">Conference Intelligence Radar</p>
+              <p className="text-white text-sm font-semibold leading-none">Conference Intelligence</p>
               <p className="text-white/50 text-xs mt-0.5">Crypto BD Intelligence · Powered by AI</p>
             </div>
           </div>

@@ -40,7 +40,7 @@ const EMPTY_FORM: ContactForm = {
 // ── shared styles ─────────────────────────────────────────────────────────────
 
 const inputCls =
-  "w-full border border-crowe-border rounded-lg px-3 py-2 text-sm text-crowe-indigo placeholder:text-crowe-text-muted/60 focus:outline-none focus:ring-2 focus:ring-crowe-amber/40 focus:border-crowe-amber";
+  "w-full border border-nexus-border rounded-lg px-3 py-2 text-sm text-nexus-indigo placeholder:text-nexus-text-muted/60 focus:outline-none focus:ring-2 focus:ring-nexus-amber/40 focus:border-nexus-amber";
 
 // ── field wrapper ─────────────────────────────────────────────────────────────
 
@@ -55,9 +55,9 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-xs font-semibold uppercase tracking-wider text-crowe-text-muted mb-1">
+      <label className="block text-xs font-semibold uppercase tracking-wider text-nexus-text-muted mb-1">
         {label}
-        {required && <span className="text-crowe-coral ml-0.5">*</span>}
+        {required && <span className="text-nexus-coral ml-0.5">*</span>}
       </label>
       {children}
     </div>
@@ -153,11 +153,11 @@ function ContactModal({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-xl border border-crowe-border/60 w-full max-w-lg shadow-xl"
+        className="bg-white rounded-xl border border-nexus-border/60 w-full max-w-lg shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="px-6 py-4 border-b border-crowe-border/60">
-          <h2 className="text-lg font-bold text-crowe-indigo">{title}</h2>
+        <div className="px-6 py-4 border-b border-nexus-border/60">
+          <h2 className="text-lg font-bold text-nexus-indigo">{title}</h2>
         </div>
         <form onSubmit={onSubmit} className="px-6 py-5 space-y-4">
           <Field label="Name" required>
@@ -215,14 +215,14 @@ function ContactModal({
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 text-sm font-medium text-crowe-text-muted hover:text-crowe-indigo transition-colors"
+              className="px-4 py-2 text-sm font-medium text-nexus-text-muted hover:text-nexus-indigo transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={saving}
-              className="px-5 py-2.5 text-sm font-semibold bg-crowe-amber text-crowe-indigo rounded-lg hover:opacity-90 disabled:opacity-50 transition-opacity"
+              className="px-5 py-2.5 text-sm font-semibold bg-nexus-amber text-nexus-indigo rounded-lg hover:opacity-90 disabled:opacity-50 transition-opacity"
             >
               {saving ? "Saving…" : "Save Contact"}
             </button>
@@ -244,7 +244,7 @@ function NotesExpander({ notes }: { notes: string }) {
       {short && (
         <button
           onClick={() => setExpanded((v) => !v)}
-          className="ml-1 text-crowe-blue hover:underline text-xs"
+          className="ml-1 text-nexus-blue hover:underline text-xs"
         >
           {expanded ? "less" : "more"}
         </button>
@@ -379,14 +379,14 @@ export default function ContactsPage() {
       {/* Header */}
       <div className="flex items-start justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-crowe-indigo">Contacts</h1>
-          <p className="text-crowe-text-muted text-sm mt-1">
+          <h1 className="text-2xl font-bold text-nexus-indigo">Contacts</h1>
+          <p className="text-nexus-text-muted text-sm mt-1">
             Decision-makers and BD contacts from tracked events
           </p>
         </div>
         <button
           onClick={openAdd}
-          className="bg-crowe-amber text-crowe-indigo font-semibold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity text-sm shrink-0"
+          className="bg-nexus-amber text-nexus-indigo font-semibold px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity text-sm shrink-0"
         >
           + Add Contact
         </button>
@@ -405,88 +405,88 @@ export default function ContactsPage() {
 
       {/* States */}
       {loading ? (
-        <div className="bg-white rounded-xl border border-crowe-border/60 p-12 text-center text-crowe-text-muted text-sm">
+        <div className="bg-white rounded-xl border border-nexus-border/60 p-12 text-center text-nexus-text-muted text-sm">
           Loading…
         </div>
       ) : error ? (
-        <div className="bg-white rounded-xl border border-crowe-border/60 p-12 text-center text-crowe-coral text-sm">
+        <div className="bg-white rounded-xl border border-nexus-border/60 p-12 text-center text-nexus-coral text-sm">
           {error}
         </div>
       ) : filtered.length === 0 ? (
-        <div className="bg-white rounded-xl border border-crowe-border/60 p-12 text-center">
-          <p className="text-crowe-text-muted text-sm">
+        <div className="bg-white rounded-xl border border-nexus-border/60 p-12 text-center">
+          <p className="text-nexus-text-muted text-sm">
             {search ? "No contacts match your search." : "No contacts yet."}
           </p>
           {!search && (
-            <p className="text-crowe-text-muted text-xs mt-1">
+            <p className="text-nexus-text-muted text-xs mt-1">
               Add your first contact using the button above.
             </p>
           )}
         </div>
       ) : (
-        <div className="bg-white rounded-xl border border-crowe-border/60 overflow-hidden">
+        <div className="bg-white rounded-xl border border-nexus-border/60 overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-crowe-border/60 bg-crowe-surface/40">
-                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-crowe-text-muted">
+              <tr className="border-b border-nexus-border/60 bg-nexus-surface/40">
+                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-nexus-text-muted">
                   Name
                 </th>
-                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-crowe-text-muted">
+                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-nexus-text-muted">
                   Company
                 </th>
-                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-crowe-text-muted">
+                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-nexus-text-muted">
                   Email
                 </th>
-                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-crowe-text-muted">
+                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-nexus-text-muted">
                   Connected At
                 </th>
-                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-crowe-text-muted">
+                <th className="text-left px-5 py-3 text-xs font-semibold uppercase tracking-wider text-nexus-text-muted">
                   Notes
                 </th>
                 <th className="px-5 py-3" />
               </tr>
             </thead>
-            <tbody className="divide-y divide-crowe-border/40">
+            <tbody className="divide-y divide-nexus-border/40">
               {filtered.map((c) => (
                 <tr
                   key={c.id}
-                  className="hover:bg-crowe-surface/30 transition-colors align-top"
+                  className="hover:bg-nexus-surface/30 transition-colors align-top"
                 >
-                  <td className="px-5 py-3.5 font-semibold text-crowe-indigo whitespace-nowrap">
+                  <td className="px-5 py-3.5 font-semibold text-nexus-indigo whitespace-nowrap">
                     {c.name}
                   </td>
-                  <td className="px-5 py-3.5 text-crowe-text-muted whitespace-nowrap">
-                    {c.company ?? <span className="text-crowe-border/60">—</span>}
+                  <td className="px-5 py-3.5 text-nexus-text-muted whitespace-nowrap">
+                    {c.company ?? <span className="text-nexus-border/60">—</span>}
                   </td>
                   <td className="px-5 py-3.5 whitespace-nowrap">
                     {c.email ? (
-                      <a href={`mailto:${c.email}`} className="text-crowe-blue hover:underline">
+                      <a href={`mailto:${c.email}`} className="text-nexus-blue hover:underline">
                         {c.email}
                       </a>
                     ) : (
-                      <span className="text-crowe-border/60">—</span>
+                      <span className="text-nexus-border/60">—</span>
                     )}
                   </td>
                   <td className="px-5 py-3.5 whitespace-nowrap">
                     {c.connection_location ? (
-                      <span className="inline-block bg-crowe-amber/10 text-crowe-indigo text-xs font-medium px-2 py-0.5 rounded-full">
+                      <span className="inline-block bg-nexus-amber/10 text-nexus-indigo text-xs font-medium px-2 py-0.5 rounded-full">
                         {c.connection_location}
                       </span>
                     ) : (
-                      <span className="text-crowe-border/60">—</span>
+                      <span className="text-nexus-border/60">—</span>
                     )}
                   </td>
-                  <td className="px-5 py-3.5 text-crowe-text-muted max-w-xs">
+                  <td className="px-5 py-3.5 text-nexus-text-muted max-w-xs">
                     {c.notes ? (
                       <NotesExpander notes={c.notes} />
                     ) : (
-                      <span className="text-crowe-border/60">—</span>
+                      <span className="text-nexus-border/60">—</span>
                     )}
                   </td>
                   <td className="px-5 py-3.5 text-right whitespace-nowrap">
                     <button
                       onClick={() => openEdit(c)}
-                      className="text-crowe-blue hover:text-crowe-indigo text-xs font-medium mr-3 transition-colors"
+                      className="text-nexus-blue hover:text-nexus-indigo text-xs font-medium mr-3 transition-colors"
                     >
                       Edit
                     </button>
@@ -495,13 +495,13 @@ export default function ContactsPage() {
                         <button
                           onClick={() => handleDelete(c.id)}
                           disabled={deletingId === c.id}
-                          className="text-crowe-coral text-xs font-semibold hover:text-red-700 transition-colors disabled:opacity-40"
+                          className="text-nexus-coral text-xs font-semibold hover:text-red-700 transition-colors disabled:opacity-40"
                         >
                           {deletingId === c.id ? "Deleting…" : "Confirm"}
                         </button>
                         <button
                           onClick={() => setConfirmDelete(null)}
-                          className="text-crowe-text-muted text-xs hover:text-crowe-indigo transition-colors"
+                          className="text-nexus-text-muted text-xs hover:text-nexus-indigo transition-colors"
                         >
                           Cancel
                         </button>
@@ -509,7 +509,7 @@ export default function ContactsPage() {
                     ) : (
                       <button
                         onClick={() => setConfirmDelete(c.id)}
-                        className="text-crowe-text-muted hover:text-crowe-coral text-xs font-medium transition-colors"
+                        className="text-nexus-text-muted hover:text-nexus-coral text-xs font-medium transition-colors"
                       >
                         Delete
                       </button>
@@ -524,7 +524,7 @@ export default function ContactsPage() {
 
       {/* Footer count */}
       {!loading && contacts.length > 0 && (
-        <p className="text-xs text-crowe-text-muted mt-3">
+        <p className="text-xs text-nexus-text-muted mt-3">
           {filtered.length} of {contacts.length} contact
           {contacts.length !== 1 ? "s" : ""}
         </p>

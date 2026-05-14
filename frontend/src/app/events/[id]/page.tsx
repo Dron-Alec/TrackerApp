@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const event = await fetchEvent(id);
   if (!event) return { title: 'Event Not Found' };
   return {
-    title: `${event.name} · Crowe Conference Radar`,
+    title: `${event.name} · Conference Radar`,
     description: event.description.slice(0, 160),
   };
 }

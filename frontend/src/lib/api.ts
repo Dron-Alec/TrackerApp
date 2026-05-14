@@ -178,23 +178,23 @@ export const STATUS_LABELS: Record<string, string> = {
 };
 
 export const STATUS_COLORS: Record<string, string> = {
-  pending_review: "bg-crowe-amber/15 text-crowe-amber-dark",
-  watching: "bg-crowe-cyan/15 text-crowe-cyan-dark",
-  attending: "bg-crowe-teal/15 text-crowe-teal-dark",
-  attended: "bg-crowe-indigo/10 text-crowe-indigo",
-  passed: "bg-crowe-surface text-crowe-text-muted",
+  pending_review: "bg-nexus-amber/15 text-nexus-amber-dark",
+  watching: "bg-nexus-cyan/15 text-nexus-cyan-dark",
+  attending: "bg-nexus-teal/15 text-nexus-teal-dark",
+  attended: "bg-nexus-indigo/10 text-nexus-indigo",
+  passed: "bg-nexus-surface text-nexus-text-muted",
 };
 
 export const DENSITY_COLORS: Record<string, string> = {
-  high: "text-crowe-teal",
-  medium: "text-crowe-amber",
-  low: "text-crowe-text-muted",
+  high: "text-nexus-teal",
+  medium: "text-nexus-amber",
+  low: "text-nexus-text-muted",
 };
 
 export function scoreColor(score: number): string {
-  if (score >= 80) return "text-crowe-teal font-semibold";
-  if (score >= 60) return "text-crowe-amber font-semibold";
-  return "text-crowe-text-muted";
+  if (score >= 80) return "text-nexus-teal font-semibold";
+  if (score >= 60) return "text-nexus-amber font-semibold";
+  return "text-nexus-text-muted";
 }
 
 export function formatDateRange(start: string | null, end: string | null): string {

@@ -9,7 +9,7 @@ export function EventCard({ event }: { event: Event }) {
 
   return (
     <Link href={`/events/${event.id}`} className="group block">
-      <article className="h-full bg-white rounded-lg border border-gray-200 p-5 hover:border-crowe-amber hover:shadow-md transition-all duration-150 flex flex-col gap-3">
+      <article className="h-full bg-white rounded-lg border border-gray-200 p-5 hover:border-nexus-amber hover:shadow-md transition-all duration-150 flex flex-col gap-3">
         {/* Header row */}
         <div className="flex items-start justify-between gap-2">
           <TypeBadge type={event.type} />
@@ -17,7 +17,7 @@ export function EventCard({ event }: { event: Event }) {
         </div>
 
         {/* Event name */}
-        <h3 className="text-base font-semibold text-crowe-navy leading-snug group-hover:text-crowe-amber transition-colors line-clamp-2">
+        <h3 className="text-base font-semibold text-nexus-navy leading-snug group-hover:text-nexus-amber transition-colors line-clamp-2">
           {event.name}
         </h3>
 
@@ -48,7 +48,7 @@ export function EventCard({ event }: { event: Event }) {
               <span key={cat} className="text-xs px-1.5 py-0.5 bg-gray-50 text-gray-500 rounded">{cat}</span>
             ))}
           </div>
-          <span className="text-xs font-semibold text-crowe-amber group-hover:underline flex items-center gap-1">
+          <span className="text-xs font-semibold text-nexus-amber group-hover:underline flex items-center gap-1">
             View Intel
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />

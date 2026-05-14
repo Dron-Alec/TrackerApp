@@ -1,38 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  /* Crowe Primary */
-  --color-crowe-navy: #011E41;
-  --color-crowe-amber: #F5A800;
-  --color-crowe-amber-bright: #FFD231;
-  --color-crowe-amber-dark: #D7761D;
-  --color-crowe-indigo: #011E41;
-  --color-crowe-indigo-core: #002E62;
-  --color-crowe-indigo-bright: #003F9F;
+  /* Primary */
+  --color-nexus-navy: #011E41;
+  --color-nexus-amber: #F5A800;
+  --color-nexus-amber-bright: #FFD231;
+  --color-nexus-amber-dark: #D7761D;
+  --color-nexus-indigo: #011E41;
+  --color-nexus-indigo-core: #002E62;
+  --color-nexus-indigo-bright: #003F9F;
 
-  /* Crowe Secondary */
-  --color-crowe-teal: #05AB8C;
-  --color-crowe-teal-bright: #16D9BC;
-  --color-crowe-teal-dark: #0C7876;
-  --color-crowe-cyan: #54C0E8;
-  --color-crowe-cyan-light: #8FE1FF;
-  --color-crowe-cyan-dark: #007DA3;
-  --color-crowe-blue: #0075C9;
-  --color-crowe-blue-light: #32A8FD;
-  --color-crowe-blue-dark: #0050AD;
-  --color-crowe-violet: #B14FC5;
-  --color-crowe-violet-bright: #EA80FF;
-  --color-crowe-violet-dark: #612080;
-  --color-crowe-coral: #E5376B;
-  --color-crowe-coral-bright: #FF526F;
-  --color-crowe-coral-dark: #992A5C;
+  /* Secondary */
+  --color-nexus-teal: #05AB8C;
+  --color-nexus-teal-bright: #16D9BC;
+  --color-nexus-teal-dark: #0C7876;
+  --color-nexus-cyan: #54C0E8;
+  --color-nexus-cyan-light: #8FE1FF;
+  --color-nexus-cyan-dark: #007DA3;
+  --color-nexus-blue: #0075C9;
+  --color-nexus-blue-light: #32A8FD;
+  --color-nexus-blue-dark: #0050AD;
+  --color-nexus-violet: #B14FC5;
+  --color-nexus-violet-bright: #EA80FF;
+  --color-nexus-violet-dark: #612080;
+  --color-nexus-coral: #E5376B;
+  --color-nexus-coral-bright: #FF526F;
+  --color-nexus-coral-dark: #992A5C;
 
   /* Neutrals */
-  --color-crowe-text: #333333;
-  --color-crowe-text-mid: #4F4F4F;
-  --color-crowe-text-muted: #828282;
-  --color-crowe-border: #BDBDBD;
-  --color-crowe-surface: #E0E0E0;
+  --color-nexus-text: #333333;
+  --color-nexus-text-mid: #4F4F4F;
+  --color-nexus-text-muted: #828282;
+  --color-nexus-border: #BDBDBD;
+  --color-nexus-surface: #E0E0E0;
 
   --font-sans: Arial, Helvetica, sans-serif;
 }

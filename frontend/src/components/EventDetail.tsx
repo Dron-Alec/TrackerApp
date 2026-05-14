@@ -33,7 +33,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       {/* Breadcrumb */}
-      <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-crowe-amber transition-colors">
+      <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-nexus-amber transition-colors">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <line x1="19" y1="12" x2="5" y2="12" />
           <polyline points="12 19 5 12 12 5" />
@@ -42,7 +42,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
       </Link>
 
       {/* Event header card */}
-      <div className="bg-crowe-navy text-white rounded-lg p-6 space-y-4">
+      <div className="bg-nexus-navy text-white rounded-lg p-6 space-y-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <TypeBadge type={event.type} />
           <ScoreBadge score={event.relevanceScore} size="lg" />
@@ -64,7 +64,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
               href={event.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-crowe-amber hover:underline"
+              className="flex items-center gap-1 text-nexus-amber hover:underline"
             >
               <LinkIcon />
               Event Website
@@ -96,7 +96,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
             {event.attendanceCost.tiers.map((tier, i) => (
               <div key={i} className="flex items-center justify-between py-2 first:pt-0 last:pb-0">
                 <span className="text-sm text-gray-600">{tier.label}</span>
-                <span className={`text-sm font-semibold ${tier.price === 'Free' ? 'text-crowe-teal' : tier.price === 'TBD' || tier.price === 'See website' ? 'text-gray-400' : 'text-crowe-navy'}`}>
+                <span className={`text-sm font-semibold ${tier.price === 'Free' ? 'text-nexus-teal' : tier.price === 'TBD' || tier.price === 'See website' ? 'text-gray-400' : 'text-nexus-navy'}`}>
                   {tier.price}
                 </span>
               </div>
@@ -112,7 +112,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
               href={event.attendanceCost.registrationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-crowe-blue hover:underline mt-1"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-nexus-blue hover:underline mt-1"
             >
               Register / View Pricing
               <LinkIcon />
@@ -131,7 +131,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
             <button
               onClick={generateInsights}
               disabled={analyzing}
-              className="flex items-center gap-2 px-4 py-2 rounded-md bg-crowe-amber text-crowe-navy font-semibold text-sm hover:bg-amber-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-4 py-2 rounded-md bg-nexus-amber text-nexus-navy font-semibold text-sm hover:bg-amber-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {analyzing ? (
                 <>
@@ -154,9 +154,9 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
         )}
       </Section>
 
-      {/* Why Crowe Should Care */}
+      {/* Why We Should Attend */}
       {hasInsights && event.serviceLineInsights && (
-        <Section title="Why Crowe Should Care" icon={<BriefcaseIcon />}>
+        <Section title="Why We Should Attend" icon={<BriefcaseIcon />}>
           {/* Tab nav */}
           <div className="flex gap-1 mb-4 bg-gray-100 p-1 rounded-lg w-fit">
             {(
@@ -172,7 +172,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
                 onClick={() => setActiveTab(tab.key)}
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                   activeTab === tab.key
-                    ? 'bg-crowe-navy text-white shadow-sm'
+                    ? 'bg-nexus-navy text-white shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -181,7 +181,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
             ))}
           </div>
 
-          <div className="p-4 bg-amber-50 border-l-4 border-crowe-amber rounded-r-lg">
+          <div className="p-4 bg-amber-50 border-l-4 border-nexus-amber rounded-r-lg">
             <p className="text-gray-700 leading-relaxed">
               {event.serviceLineInsights[activeTab]}
             </p>
@@ -191,10 +191,10 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
             {(
               [
-                { key: 'audit', label: 'Audit', color: 'border-t-crowe-teal' },
-                { key: 'bsaAml', label: 'BSA/AML', color: 'border-t-crowe-amber' },
-                { key: 'riskConsulting', label: 'Risk Consulting', color: 'border-t-crowe-blue' },
-                { key: 'advisory', label: 'Advisory', color: 'border-t-crowe-violet' },
+                { key: 'audit', label: 'Audit', color: 'border-t-nexus-teal' },
+                { key: 'bsaAml', label: 'BSA/AML', color: 'border-t-nexus-amber' },
+                { key: 'riskConsulting', label: 'Risk Consulting', color: 'border-t-nexus-blue' },
+                { key: 'advisory', label: 'Advisory', color: 'border-t-nexus-violet' },
               ] as const
             ).map(({ key, label, color }) => (
               <button
@@ -216,13 +216,13 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
           <div className="space-y-3">
             {event.personas.map((persona, i) => (
               <div key={i} className="flex items-start gap-4 p-4 bg-white border border-gray-200 rounded-lg hover:border-gray-300 transition-colors">
-                <div className="w-10 h-10 rounded-full bg-crowe-navy/10 flex items-center justify-center shrink-0 text-crowe-navy font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-nexus-navy/10 flex items-center justify-center shrink-0 text-nexus-navy font-bold text-sm">
                   {persona.title.charAt(0)}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div>
-                      <p className="font-semibold text-crowe-navy text-sm">{persona.title}</p>
+                      <p className="font-semibold text-nexus-navy text-sm">{persona.title}</p>
                       <p className="text-xs text-gray-500 mt-0.5">{persona.companyTypes.join(' · ')}</p>
                     </div>
                     {persona.linkedinSearchQuery && (
@@ -251,7 +251,7 @@ export function EventDetail({ initialEvent }: { initialEvent: Event }) {
           <ol className="space-y-3">
             {event.conversationStarters.map((starter, i) => (
               <li key={i} className="flex gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-crowe-amber/20 text-crowe-amber font-bold text-xs flex items-center justify-center mt-0.5">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-nexus-amber/20 text-nexus-amber font-bold text-xs flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
                 <p className="text-sm text-gray-700 leading-relaxed italic">{starter}</p>
@@ -320,7 +320,7 @@ type ContactFormData = {
   name: string; company: string; email: string; connection_location: string; notes: string;
 };
 const EMPTY_CONTACT_FORM: ContactFormData = { name: '', company: '', email: '', connection_location: '', notes: '' };
-const contactInputCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-crowe-indigo placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-crowe-amber/40 focus:border-crowe-amber";
+const contactInputCls = "w-full border border-gray-200 rounded-lg px-3 py-2 text-sm text-nexus-indigo placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-nexus-amber/40 focus:border-nexus-amber";
 
 function EventContactsSection({ eventId, eventName }: { eventId: string; eventName: string }) {
   const [contacts, setContacts] = useState<APIContact[]>([]);
@@ -406,15 +406,15 @@ function EventContactsSection({ eventId, eventName }: { eventId: string; eventNa
         <div className="space-y-2">
           {contacts.map(c => (
             <div key={c.id} className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 bg-white hover:border-gray-300 transition-colors">
-              <div className="w-8 h-8 rounded-full bg-crowe-navy/10 flex items-center justify-center text-crowe-indigo font-bold text-sm shrink-0">
+              <div className="w-8 h-8 rounded-full bg-nexus-navy/10 flex items-center justify-center text-nexus-indigo font-bold text-sm shrink-0">
                 {c.name.charAt(0).toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-crowe-indigo text-sm">{c.name}</p>
+                <p className="font-semibold text-nexus-indigo text-sm">{c.name}</p>
                 {c.company && <p className="text-xs text-gray-500">{c.company}</p>}
               </div>
               {c.email && (
-                <a href={`mailto:${c.email}`} className="text-crowe-blue hover:underline text-xs hidden sm:block shrink-0">
+                <a href={`mailto:${c.email}`} className="text-nexus-blue hover:underline text-xs hidden sm:block shrink-0">
                   {c.email}
                 </a>
               )}
@@ -433,13 +433,13 @@ function EventContactsSection({ eventId, eventName }: { eventId: string; eventNa
       <div className="flex gap-2 pt-1">
         <button
           onClick={openNew}
-          className="text-sm font-semibold px-3 py-1.5 rounded-md bg-crowe-amber text-crowe-indigo hover:opacity-90 transition-opacity"
+          className="text-sm font-semibold px-3 py-1.5 rounded-md bg-nexus-amber text-nexus-indigo hover:opacity-90 transition-opacity"
         >
           + New Contact
         </button>
         <button
           onClick={openLink}
-          className="text-sm font-medium px-3 py-1.5 rounded-md border border-gray-200 text-crowe-indigo hover:bg-gray-50 transition-colors"
+          className="text-sm font-medium px-3 py-1.5 rounded-md border border-gray-200 text-nexus-indigo hover:bg-gray-50 transition-colors"
         >
           Link Existing
         </button>
@@ -449,7 +449,7 @@ function EventContactsSection({ eventId, eventName }: { eventId: string; eventNa
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4" onClick={() => setModal('closed')}>
           <div className="bg-white rounded-xl border border-gray-200 w-full max-w-lg shadow-xl" onClick={e => e.stopPropagation()}>
             <div className="px-6 py-4 border-b border-gray-100">
-              <h2 className="text-lg font-bold text-crowe-indigo">New Contact</h2>
+              <h2 className="text-lg font-bold text-nexus-indigo">New Contact</h2>
               <p className="text-xs text-gray-400 mt-0.5">Create and link to this event</p>
             </div>
             <form onSubmit={handleCreateAndLink} className="px-6 py-5 space-y-4">
@@ -485,11 +485,11 @@ function EventContactsSection({ eventId, eventName }: { eventId: string; eventNa
               </div>
               <div className="flex justify-end gap-3 pt-1">
                 <button type="button" onClick={() => setModal('closed')}
-                  className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-crowe-indigo transition-colors">
+                  className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-nexus-indigo transition-colors">
                   Cancel
                 </button>
                 <button type="submit" disabled={saving}
-                  className="px-5 py-2.5 text-sm font-semibold bg-crowe-amber text-crowe-indigo rounded-lg hover:opacity-90 disabled:opacity-50 transition-opacity">
+                  className="px-5 py-2.5 text-sm font-semibold bg-nexus-amber text-nexus-indigo rounded-lg hover:opacity-90 disabled:opacity-50 transition-opacity">
                   {saving ? 'Saving…' : 'Save Contact'}
                 </button>
               </div>
@@ -502,7 +502,7 @@ function EventContactsSection({ eventId, eventName }: { eventId: string; eventNa
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4" onClick={() => setModal('closed')}>
           <div className="bg-white rounded-xl border border-gray-200 w-full max-w-md shadow-xl" onClick={e => e.stopPropagation()}>
             <div className="px-6 py-4 border-b border-gray-100">
-              <h2 className="text-lg font-bold text-crowe-indigo">Link Existing Contact</h2>
+              <h2 className="text-lg font-bold text-nexus-indigo">Link Existing Contact</h2>
             </div>
             <div className="px-6 py-5 space-y-3">
               <input type="search" placeholder="Search by name or company…" autoFocus
@@ -519,14 +519,14 @@ function EventContactsSection({ eventId, eventName }: { eventId: string; eventNa
                 ) : filteredLinkable.map(c => (
                   <button key={c.id} onClick={() => handleLink(c.id)}
                     className="w-full text-left px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors">
-                    <p className="font-semibold text-crowe-indigo text-sm">{c.name}</p>
+                    <p className="font-semibold text-nexus-indigo text-sm">{c.name}</p>
                     {c.company && <p className="text-xs text-gray-400">{c.company}</p>}
                   </button>
                 ))}
               </div>
               <div className="flex justify-end pt-1">
                 <button onClick={() => setModal('closed')}
-                  className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-crowe-indigo transition-colors">
+                  className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-nexus-indigo transition-colors">
                   Cancel
                 </button>
               </div>
@@ -542,7 +542,7 @@ function Section({ title, icon, children }: { title: string; icon: React.ReactNo
   return (
     <section className="bg-white rounded-lg border border-gray-200 p-5 space-y-4">
       <h2 className="flex items-center gap-2 text-sm font-bold text-gray-400 uppercase tracking-widest">
-        <span className="text-crowe-amber">{icon}</span>
+        <span className="text-nexus-amber">{icon}</span>
         {title}
       </h2>
       {children}

@@ -67,12 +67,12 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-60 shrink-0 flex flex-col bg-crowe-indigo text-white h-full min-h-screen">
+    <aside className="w-60 shrink-0 flex flex-col bg-nexus-indigo text-white h-full min-h-screen">
       {/* Logo */}
       <div className="px-6 py-5 border-b border-white/10">
         <div className="flex items-center gap-2">
-          <span className="text-crowe-amber font-bold text-xl tracking-tight leading-none">
-            CROWE
+          <span className="text-nexus-amber font-bold text-xl tracking-tight leading-none">
+            NEXUS
           </span>
           <span className="w-px h-5 bg-white/20" />
           <span className="text-white/70 text-xs font-medium tracking-wider uppercase">
@@ -97,11 +97,11 @@ export function Sidebar() {
               className={[
                 "flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-crowe-amber text-crowe-indigo"
+                  ? "bg-nexus-amber text-nexus-indigo"
                   : "text-white/70 hover:text-white hover:bg-white/8",
               ].join(" ")}
             >
-              <span className={isActive ? "text-crowe-indigo" : "text-white/50"}>
+              <span className={isActive ? "text-nexus-indigo" : "text-white/50"}>
                 {item.icon}
               </span>
               {item.label}

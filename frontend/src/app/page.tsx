@@ -6,23 +6,23 @@ import { api, APIEvent, CATEGORY_LABELS, STATUS_COLORS, STATUS_LABELS, formatDat
 
 function StatCard({ label, value, sub, accent }: { label: string; value: number | string; sub?: string; accent?: string }) {
   return (
-    <div className="bg-white rounded-xl border border-crowe-border/60 p-5">
-      <p className="text-xs font-semibold uppercase tracking-wider text-crowe-text-muted">{label}</p>
-      <p className={`text-3xl font-bold mt-1 ${accent ?? "text-crowe-indigo"}`}>{value}</p>
-      {sub && <p className="text-xs text-crowe-text-muted mt-1">{sub}</p>}
+    <div className="bg-white rounded-xl border border-nexus-border/60 p-5">
+      <p className="text-xs font-semibold uppercase tracking-wider text-nexus-text-muted">{label}</p>
+      <p className={`text-3xl font-bold mt-1 ${accent ?? "text-nexus-indigo"}`}>{value}</p>
+      {sub && <p className="text-xs text-nexus-text-muted mt-1">{sub}</p>}
     </div>
   );
 }
 
 function MiniEventRow({ event }: { event: APIEvent }) {
   return (
-    <Link href="/events" className="flex items-center gap-3 py-2.5 border-b border-crowe-border/40 last:border-0 hover:bg-crowe-surface/30 -mx-2 px-2 rounded transition-colors">
+    <Link href="/events" className="flex items-center gap-3 py-2.5 border-b border-nexus-border/40 last:border-0 hover:bg-nexus-surface/30 -mx-2 px-2 rounded transition-colors">
       <span className={`text-base font-bold w-10 text-center ${scoreColor(event.relevance_score)}`}>
         {Math.round(event.relevance_score)}
       </span>
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-crowe-indigo line-clamp-1">{event.name}</p>
-        <p className="text-xs text-crowe-text-muted">
+        <p className="text-sm font-medium text-nexus-indigo line-clamp-1">{event.name}</p>
+        <p className="text-xs text-nexus-text-muted">
           {formatDateRange(event.date_start, event.date_end)}
           {event.city ? ` · ${event.city}` : ""}
         </p>
@@ -64,20 +64,20 @@ export default function DashboardPage() {
   return (
     <div className="p-8 max-w-5xl mx-auto w-full">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-crowe-indigo">Crypto Event Intelligence</h1>
-        <p className="text-crowe-text-muted text-sm mt-1">
+        <h1 className="text-2xl font-bold text-nexus-indigo">Crypto Event Intelligence</h1>
+        <p className="text-nexus-text-muted text-sm mt-1">
           BD radar for audit, BSA/AML, risk consulting, and advisory
         </p>
       </div>
 
       {loading ? (
-        <div className="text-center py-24 text-crowe-text-muted">Loading…</div>
+        <div className="text-center py-24 text-nexus-text-muted">Loading…</div>
       ) : error ? (
         <div className="text-center py-24">
-          <p className="text-crowe-coral font-medium mb-2">{error}</p>
-          <p className="text-crowe-text-muted text-sm mt-1">
+          <p className="text-nexus-coral font-medium mb-2">{error}</p>
+          <p className="text-nexus-text-muted text-sm mt-1">
             Start the backend:{" "}
-            <code className="bg-crowe-surface px-1.5 py-0.5 rounded text-xs">
+            <code className="bg-nexus-surface px-1.5 py-0.5 rounded text-xs">
               uvicorn app.main:app --reload --port 8000
             </code>
           </p>
@@ -86,20 +86,20 @@ export default function DashboardPage() {
         <>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <StatCard label="Total Events" value={events.length} sub="in database" />
-            <StatCard label="Attending" value={attending.length} accent="text-crowe-teal" sub="confirmed" />
-            <StatCard label="High Priority" value={highPriority.length} accent="text-crowe-amber-dark" sub="score ≥ 80" />
+            <StatCard label="Attending" value={attending.length} accent="text-nexus-teal" sub="confirmed" />
+            <StatCard label="High Priority" value={highPriority.length} accent="text-nexus-amber-dark" sub="score ≥ 80" />
             <StatCard label="Avg Score" value={avgScore} sub="AI relevance" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 bg-white rounded-xl border border-crowe-border/60 p-5">
+            <div className="lg:col-span-2 bg-white rounded-xl border border-nexus-border/60 p-5">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="font-semibold text-crowe-indigo text-sm uppercase tracking-wider">Upcoming Events</h2>
-                <Link href="/events" className="text-xs text-crowe-blue hover:underline">View all →</Link>
+                <h2 className="font-semibold text-nexus-indigo text-sm uppercase tracking-wider">Upcoming Events</h2>
+                <Link href="/events" className="text-xs text-nexus-blue hover:underline">View all →</Link>
               </div>
               {upcoming.length === 0 ? (
-                <p className="text-crowe-text-muted text-sm py-4 text-center">
-                  No upcoming events. Hit <Link href="/events" className="text-crowe-blue underline">Refresh</Link> on the Events page.
+                <p className="text-nexus-text-muted text-sm py-4 text-center">
+                  No upcoming events. Hit <Link href="/events" className="text-nexus-blue underline">Refresh</Link> on the Events page.
                 </p>
               ) : (
                 upcoming.map((e) => <MiniEventRow key={e.id} event={e} />)
@@ -107,18 +107,18 @@ export default function DashboardPage() {
             </div>
 
             <div className="space-y-5">
-              <div className="bg-white rounded-xl border border-crowe-border/60 p-5">
-                <h2 className="font-semibold text-crowe-indigo text-sm uppercase tracking-wider mb-4">By Service Line</h2>
+              <div className="bg-white rounded-xl border border-nexus-border/60 p-5">
+                <h2 className="font-semibold text-nexus-indigo text-sm uppercase tracking-wider mb-4">By Service Line</h2>
                 <div className="space-y-3">
                   {categoryBreakdown.map(({ key, label, count }) => (
                     <div key={key}>
                       <div className="flex justify-between text-xs mb-1">
-                        <span className="text-crowe-text-mid font-medium">{label}</span>
-                        <span className="text-crowe-text-muted">{count}</span>
+                        <span className="text-nexus-text-mid font-medium">{label}</span>
+                        <span className="text-nexus-text-muted">{count}</span>
                       </div>
-                      <div className="h-1.5 bg-crowe-surface rounded-full overflow-hidden">
+                      <div className="h-1.5 bg-nexus-surface rounded-full overflow-hidden">
                         <div
-                          className="h-full bg-crowe-amber rounded-full"
+                          className="h-full bg-nexus-amber rounded-full"
                           style={{ width: events.length ? `${(count / events.length) * 100}%` : "0%" }}
                         />
                       </div>
@@ -128,10 +128,10 @@ export default function DashboardPage() {
               </div>
 
               {highPriority.length > 0 && (
-                <div className="bg-white rounded-xl border border-crowe-border/60 p-5">
-                  <h2 className="font-semibold text-crowe-coral text-xs uppercase tracking-wider mb-3">Must-Attend</h2>
+                <div className="bg-white rounded-xl border border-nexus-border/60 p-5">
+                  <h2 className="font-semibold text-nexus-coral text-xs uppercase tracking-wider mb-3">Must-Attend</h2>
                   {highPriority.slice(0, 4).map((e) => (
-                    <p key={e.id} className="text-xs text-crowe-indigo font-medium py-1.5 border-b border-crowe-border/40 last:border-0 line-clamp-1">
+                    <p key={e.id} className="text-xs text-nexus-indigo font-medium py-1.5 border-b border-nexus-border/40 last:border-0 line-clamp-1">
                       {e.name}
                     </p>
                   ))}

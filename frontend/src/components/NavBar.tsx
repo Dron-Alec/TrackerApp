@@ -32,20 +32,19 @@ export function NavBar({ lastIngested }: NavBarProps) {
     : null;
 
   return (
-    <header className="bg-crowe-navy text-white">
+    <header className="bg-nexus-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4">
-            {/* Crowe wordmark */}
             <span
               className="text-2xl font-bold tracking-tight text-white"
               style={{ fontFamily: "'Helvetica Now', Arial, sans-serif", letterSpacing: '-0.02em' }}
             >
-              CROWE
+              NEXUS
             </span>
             <div className="hidden sm:block w-px h-6 bg-white/20" />
             <div className="hidden sm:block">
-              <p className="text-crowe-amber text-sm font-semibold leading-none">Conference Intelligence Radar</p>
+              <p className="text-nexus-amber text-sm font-semibold leading-none">Conference Intelligence Radar</p>
               <p className="text-white/50 text-xs mt-0.5">Crypto BD Intelligence · Powered by AI</p>
             </div>
           </div>
@@ -62,7 +61,7 @@ export function NavBar({ lastIngested }: NavBarProps) {
             <button
               onClick={handleSync}
               disabled={syncing}
-              className="flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold bg-crowe-amber text-crowe-navy hover:bg-amber-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="flex items-center gap-2 px-3 py-1.5 rounded text-xs font-semibold bg-nexus-amber text-nexus-navy hover:bg-amber-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {syncing ? <LoadingSpinner size={12} /> : (
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">

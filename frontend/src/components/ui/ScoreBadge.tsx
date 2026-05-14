@@ -12,8 +12,8 @@ function tierLabel(score: number): string {
 
 function tierClasses(score: number): string {
   if (score >= 75) return 'bg-teal-500 text-white';
-  if (score >= 50) return 'bg-amber-400 text-crowe-navy';
-  if (score >= 25) return 'bg-crowe-blue text-white';
+  if (score >= 50) return 'bg-amber-400 text-nexus-navy';
+  if (score >= 25) return 'bg-nexus-blue text-white';
   return 'bg-gray-400 text-white';
 }
 

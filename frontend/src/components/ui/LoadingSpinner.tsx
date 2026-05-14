@@ -17,7 +17,7 @@ export function LoadingSpinner({ size = 20, className = '' }: { size?: number; c
 export function PageLoader() {
   return (
     <div className="flex flex-col items-center justify-center py-32 gap-4">
-      <LoadingSpinner size={40} className="text-crowe-amber" />
+      <LoadingSpinner size={40} className="text-nexus-amber" />
       <p className="text-gray-500 text-sm">Loading intelligence data…</p>
     </div>
   );

@@ -5,13 +5,13 @@ export function buildAnalysisPrompt(event: Event): string {
     ? event.speakers.map(s => [s.name, s.title, s.company].filter(Boolean).join(', ')).join(' | ')
     : 'Not listed';
 
-  return `You are an intelligence analyst for Crowe LLP, a Top 10 professional services firm. Crowe's digital asset practice provides:
+  return `You are an intelligence analyst for Nexus Advisory Group, a Top 10 professional services firm. Nexus Advisory's digital asset practice provides:
 - Audit: Financial statement audits for crypto exchanges, digital asset funds, and Web3 companies
 - BSA/AML: Bank Secrecy Act compliance program design, transaction monitoring, AML testing
 - Risk Consulting: Enterprise risk management, internal controls, SOC examinations for crypto custodians
 - Advisory: Strategic advisory on regulatory readiness, crypto adoption, technology risk
 
-Analyze the following event and produce actionable business development intelligence for Crowe partners.
+Analyze the following event and produce actionable business development intelligence for firm partners.
 
 EVENT DETAILS
 Name: ${event.name}
@@ -39,7 +39,7 @@ Return ONLY a valid JSON object — no markdown, no code fences, no explanation 
   "personas": [
     {
       "title": "Exact job title (e.g. Chief Compliance Officer)",
-      "description": "Why this person matters — what challenge they face that Crowe solves",
+      "description": "Why this person matters — what challenge they face that our firm solves",
       "companyTypes": ["list of company types where this persona works"],
       "linkedinSearchQuery": "keywords for LinkedIn people search to find this persona at this event"
     }
@@ -49,8 +49,8 @@ Return ONLY a valid JSON object — no markdown, no code fences, no explanation 
     "Second angle based on a current regulatory or enforcement pressure relevant to this audience",
     "Third angle referencing a specific challenge like audit readiness, AML program maturity, or scaling compliance"
   ],
-  "keyTakeaway": "One sentence: the single most important reason Crowe should prioritize attending this event"
+  "keyTakeaway": "One sentence: the single most important reason to prioritize attending this event"
 }
 
-Personas array should have 3-5 entries. Conversation starters should feel like something a senior Crowe partner would actually say — specific, not boilerplate.`;
+Personas array should have 3-5 entries. Conversation starters should feel like something a senior partner would actually say — specific, not boilerplate.`;
 }

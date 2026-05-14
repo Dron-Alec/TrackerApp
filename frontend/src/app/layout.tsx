@@ -3,8 +3,8 @@ import './globals.css';
 import { Sidebar } from '@/components/layout/Sidebar';
 
 export const metadata: Metadata = {
-  title: 'Conference Radar | Crowe',
-  description: 'Crypto event intelligence and BD radar for Crowe',
+  title: 'Conference Radar',
+  description: 'Crypto event intelligence and BD radar',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

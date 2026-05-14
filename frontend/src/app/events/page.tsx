@@ -51,9 +51,9 @@ const STATUSES = ["pending_review", "watching", "attending", "attended", "passed
 
 function ScoreBadge({ score }: { score: number }) {
   const color =
-    score >= 80 ? "bg-crowe-teal text-white" :
-    score >= 60 ? "bg-crowe-amber text-crowe-indigo" :
-    "bg-crowe-surface text-crowe-text-muted";
+    score >= 80 ? "bg-nexus-teal text-white" :
+    score >= 60 ? "bg-nexus-amber text-nexus-indigo" :
+    "bg-nexus-surface text-nexus-text-muted";
   return (
     <span className={`inline-flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold ${color}`}>
       {Math.round(score)}
@@ -63,14 +63,14 @@ function ScoreBadge({ score }: { score: number }) {
 
 function CategoryPill({ cat }: { cat: string }) {
   const colors: Record<string, string> = {
-    audit: "bg-crowe-blue/10 text-crowe-blue-dark",
-    bsa_aml: "bg-crowe-coral/10 text-crowe-coral-dark",
-    risk_consulting: "bg-crowe-violet/10 text-crowe-violet-dark",
-    advisory: "bg-crowe-teal/10 text-crowe-teal-dark",
-    crypto_general: "bg-crowe-surface text-crowe-text-mid",
+    audit: "bg-nexus-blue/10 text-nexus-blue-dark",
+    bsa_aml: "bg-nexus-coral/10 text-nexus-coral-dark",
+    risk_consulting: "bg-nexus-violet/10 text-nexus-violet-dark",
+    advisory: "bg-nexus-teal/10 text-nexus-teal-dark",
+    crypto_general: "bg-nexus-surface text-nexus-text-mid",
   };
   return (
-    <span className={`text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ${colors[cat] ?? "bg-crowe-surface text-crowe-text-muted"}`}>
+    <span className={`text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ${colors[cat] ?? "bg-nexus-surface text-nexus-text-muted"}`}>
       {CATEGORY_LABELS[cat] ?? cat}
     </span>
   );
@@ -90,23 +90,23 @@ function EventRow({ event, onStatusChange }: { event: APIEvent; onStatusChange: 
   };
 
   return (
-    <div className="bg-white rounded-xl border border-crowe-border/60 p-5 flex gap-5 items-start hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-xl border border-nexus-border/60 p-5 flex gap-5 items-start hover:shadow-md transition-shadow">
       <ScoreBadge score={event.relevance_score} />
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <h3 className="font-semibold text-crowe-indigo text-sm leading-snug line-clamp-2">{event.name}</h3>
-            <p className="text-crowe-text-muted text-xs mt-0.5">
+            <h3 className="font-semibold text-nexus-indigo text-sm leading-snug line-clamp-2">{event.name}</h3>
+            <p className="text-nexus-text-muted text-xs mt-0.5">
               {formatDateRange(event.date_start, event.date_end)}
               {event.city && ` · ${event.city}${event.state ? `, ${event.state}` : ""}`}
             </p>
           </div>
-          <span className={`shrink-0 text-[10px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full ${STATUS_COLORS[event.status] ?? "bg-crowe-surface text-crowe-text-muted"}`}>
+          <span className={`shrink-0 text-[10px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full ${STATUS_COLORS[event.status] ?? "bg-nexus-surface text-nexus-text-muted"}`}>
             {STATUS_LABELS[event.status] ?? event.status}
           </span>
         </div>
         {event.ai_reasoning && (
-          <p className="text-crowe-text-mid text-xs mt-2 line-clamp-2 italic">{event.ai_reasoning}</p>
+          <p className="text-nexus-text-mid text-xs mt-2 line-clamp-2 italic">{event.ai_reasoning}</p>
         )}
         <div className="flex flex-wrap gap-1 mt-2">
           {event.categories.map((cat) => <CategoryPill key={cat} cat={cat} />)}
@@ -120,8 +120,8 @@ function EventRow({ event, onStatusChange }: { event: APIEvent; onStatusChange: 
                 onClick={() => handleStatus(s)}
                 className={`text-[10px] px-2.5 py-1 rounded-full border font-medium transition-colors ${
                   event.status === s
-                    ? "bg-crowe-indigo text-white border-crowe-indigo"
-                    : "border-crowe-border text-crowe-text-muted hover:border-crowe-indigo hover:text-crowe-indigo"
+                    ? "bg-nexus-indigo text-white border-nexus-indigo"
+                    : "border-nexus-border text-nexus-text-muted hover:border-nexus-indigo hover:text-nexus-indigo"
                 }`}
               >
                 {STATUS_LABELS[s]}
@@ -133,7 +133,7 @@ function EventRow({ event, onStatusChange }: { event: APIEvent; onStatusChange: 
               href={event.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] text-crowe-blue hover:underline"
+              className="text-[10px] text-nexus-blue hover:underline"
             >
               View event →
             </a>
@@ -221,11 +221,11 @@ export default function EventsPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-crowe-indigo">Events</h1>
-          <p className="text-crowe-text-muted text-sm mt-0.5">
+          <h1 className="text-2xl font-bold text-nexus-indigo">Events</h1>
+          <p className="text-nexus-text-muted text-sm mt-0.5">
             {events.length} events tracked
             {lastRefreshed && (
-              <span className="ml-2 text-crowe-teal">
+              <span className="ml-2 text-nexus-teal">
                 · Last refreshed {lastRefreshed.toLocaleTimeString()}
               </span>
             )}
@@ -235,7 +235,7 @@ export default function EventsPage() {
           <button
             onClick={() => exportToExcel(events)}
             disabled={events.length === 0}
-            className="flex items-center gap-2 border border-crowe-border text-crowe-indigo font-semibold text-sm px-4 py-2.5 rounded-lg hover:border-crowe-indigo transition-colors disabled:opacity-40"
+            className="flex items-center gap-2 border border-nexus-border text-nexus-indigo font-semibold text-sm px-4 py-2.5 rounded-lg hover:border-nexus-indigo transition-colors disabled:opacity-40"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -247,7 +247,7 @@ export default function EventsPage() {
           <button
             onClick={handleRefresh}
             disabled={refreshing}
-            className="flex items-center gap-2 bg-crowe-amber text-crowe-indigo font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-crowe-amber-bright transition-colors disabled:opacity-60"
+            className="flex items-center gap-2 bg-nexus-amber text-nexus-indigo font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-nexus-amber-bright transition-colors disabled:opacity-60"
           >
           <svg
             width="15"
@@ -269,17 +269,17 @@ export default function EventsPage() {
 
       {/* Refresh stats */}
       {refreshStats && (
-        <div className="mb-5 px-4 py-3 bg-crowe-teal/10 border border-crowe-teal/20 rounded-lg text-sm text-crowe-teal-dark">
+        <div className="mb-5 px-4 py-3 bg-nexus-teal/10 border border-nexus-teal/20 rounded-lg text-sm text-nexus-teal-dark">
           Pulled <strong>{refreshStats.fetched}</strong> events from all sources · AI-scored <strong>{refreshStats.scored}</strong> new events
         </div>
       )}
 
       {/* Filters */}
-      <div className="flex flex-wrap gap-3 mb-6 p-4 bg-white rounded-xl border border-crowe-border/60">
+      <div className="flex flex-wrap gap-3 mb-6 p-4 bg-white rounded-xl border border-nexus-border/60">
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
-          className="text-sm border border-crowe-border rounded-lg px-3 py-1.5 text-crowe-text bg-white"
+          className="text-sm border border-nexus-border rounded-lg px-3 py-1.5 text-nexus-text bg-white"
         >
           <option value="">All statuses</option>
           {STATUSES.map((s) => <option key={s} value={s}>{STATUS_LABELS[s]}</option>)}
@@ -287,7 +287,7 @@ export default function EventsPage() {
         <select
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
-          className="text-sm border border-crowe-border rounded-lg px-3 py-1.5 text-crowe-text bg-white"
+          className="text-sm border border-nexus-border rounded-lg px-3 py-1.5 text-nexus-text bg-white"
         >
           <option value="">All categories</option>
           {CATEGORIES.map((c) => <option key={c} value={c}>{CATEGORY_LABELS[c]}</option>)}
@@ -295,7 +295,7 @@ export default function EventsPage() {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          className="text-sm border border-crowe-border rounded-lg px-3 py-1.5 text-crowe-text bg-white"
+          className="text-sm border border-nexus-border rounded-lg px-3 py-1.5 text-nexus-text bg-white"
         >
           <option value="date_asc">Date: earliest first</option>
           <option value="date_desc">Date: latest first</option>
@@ -305,7 +305,7 @@ export default function EventsPage() {
           <option value="name_desc">Name: Z → A</option>
         </select>
         <div className="flex items-center gap-2">
-          <label className="text-xs text-crowe-text-muted">Min score</label>
+          <label className="text-xs text-nexus-text-muted">Min score</label>
           <input
             type="range"
             min={0}
@@ -313,22 +313,22 @@ export default function EventsPage() {
             step={10}
             value={filterMinScore}
             onChange={(e) => setFilterMinScore(Number(e.target.value))}
-            className="w-24 accent-crowe-amber"
+            className="w-24 accent-nexus-amber"
           />
-          <span className="text-xs font-semibold text-crowe-indigo w-7">{filterMinScore}</span>
+          <span className="text-xs font-semibold text-nexus-indigo w-7">{filterMinScore}</span>
         </div>
       </div>
 
       {/* Content */}
       {loading ? (
-        <div className="text-center py-16 text-crowe-text-muted">Loading events…</div>
+        <div className="text-center py-16 text-nexus-text-muted">Loading events…</div>
       ) : error ? (
         <div className="text-center py-16">
-          <p className="text-crowe-coral font-medium">{error}</p>
-          <p className="text-crowe-text-muted text-sm mt-1">Make sure the backend is running on port 8000</p>
+          <p className="text-nexus-coral font-medium">{error}</p>
+          <p className="text-nexus-text-muted text-sm mt-1">Make sure the backend is running on port 8000</p>
         </div>
       ) : events.length === 0 ? (
-        <div className="text-center py-16 text-crowe-text-muted">
+        <div className="text-center py-16 text-nexus-text-muted">
           No events found. Hit <strong>Refresh</strong> to pull from all sources.
         </div>
       ) : (
